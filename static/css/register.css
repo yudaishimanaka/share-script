@@ -1,0 +1,12 @@
+body {
+    background: #455a64;
+}
+.container {
+    margin-top: 3%;
+}
+form > div[class="row"] {
+    margin-bottom: 0px;
+}
+.btn {
+    width: 100%;
+}
