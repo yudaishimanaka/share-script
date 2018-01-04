@@ -99,3 +99,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# pyenv
+.idea/
+
+# share-script
+settings.cfg
