@@ -105,3 +105,4 @@ ENV/
 
 # share-script
 settings.cfg
+database.conf
