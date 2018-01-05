@@ -23,7 +23,8 @@ class User(Base):
     comment = relation('Comment', order_by='Comment.comment_id',
                        uselist=True, backref='user')
 
-    like = relation('Like', uselist=True, backref='user')
+    like = relation('Like', order_by='Like.like_id',
+                    uselist=True, backref='user')
 
     def __repr__(self):
         return "<User('{}')>".format(self.user_id)
@@ -74,8 +75,9 @@ class Comment(Base):
 
 class Like(Base):
     __tablename__ = 'like'
+    like_id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, ForeignKey('user.user_id'))
     script_id = Column(Integer, ForeignKey('script.script_id'))
 
     def __repr__(self):
-        return "<Like('{}')>".format(self.like)
+        return "<Like('{}')>".format(self.like_id)
