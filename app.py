@@ -4,11 +4,15 @@ from database import Session as Ss
 from models import *
 from passlib.hash import pbkdf2_sha256
 import re
+import configparser
 
 
 app = Flask(__name__)
 
 app.register_blueprint(views.views)
+config = configparser.ConfigParser()
+config.read('app.conf')
+app.secret_key = config['SECRET']['SECRET_KEY']
 
 
 @app.route('/create_user', methods=['POST'])
@@ -26,7 +30,7 @@ def create_user():
                 result = Ss.query(User).filter_by(email=email)
 
                 if result.count() > 0:
-                    status = jsonify([0, "this email address is already in use"])
+                    status = [0, "this email address is already in use"]
                 else:
                     user = User(
                         user_name=user_name,
@@ -36,15 +40,15 @@ def create_user():
                     Ss.add(user)
                     Ss.commit()
                     Ss.close()
-                    status = jsonify([1, "register successfully"])
+                    status = [1, "register successfully"]
 
             else:
-                status = jsonify([2, "wrong email format"])
+                status = [2, "wrong email format"]
 
         else:
-            status = jsonify([3, "don't completed input"])
+            status = [3, "don't completed input"]
 
-        return status
+        return jsonify(status)
 
 
 @app.route('/auth', methods=['POST'])
@@ -52,7 +56,21 @@ def auth():
     if request.method == "POST":
         email = request.json['email']
         password = request.json['password']
-        return "OK"
+
+        if email and password:
+            user = Ss.query(User).filter_by(email=email).first()
+            Ss.close()
+
+            if user is not None and pbkdf2_sha256.verify(password, user.password) is True:
+                session['user_id'] = user.user_id
+                status = [1, "auth success"]
+            else:
+                status = [0, "auth failed"]
+
+        else:
+            status = [2, "don't completed input"]
+
+        return jsonify(status)
 
 
 if __name__ == '__main__':
