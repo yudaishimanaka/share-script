@@ -36,34 +36,34 @@
           <div class="col s6">
               <div class="card-panel grey lighten-2 z-depth-4">
                   <h4 class="center-align">Register Account!</h4>
-                  <form>
+                  <div>
                       <div class="row">
                           <div class="input-field col m12 s12">
                               <i class="material-icons iconis prefix">account_box</i>
-                              <input id="user_name" type="text" class="validate">
+                              <input id="user_name" type="text" class="validate" name="user_name">
                               <label for="user_name">User Name</label>
                           </div>
                       </div>
                       <div class="row">
                           <div class="input-field col m12 s12">
                               <i class="material-icons iconis prefix">email</i>
-                              <input id="mail_address" type="email" class="validate">
+                              <input id="email" type="email" class="validate" name="email">
                               <label for="mail_address">Email</label>
                           </div>
                       </div>
                       <div class="row">
                           <div class="input-field col m12 s12">
                               <i class="material-icons iconis prefix">enhanced_encryption</i>
-                              <input id="password" type="password" class="validate">
+                              <input id="password" type="password" class="validate" name="password">
                               <label for="password">Password</label>
                           </div>
                       </div>
                       <div class="row">
                           <div class="input-field col m12 s12">
-                              <button class="btn waves-effect waves-light center" type="submit">REGISTER NOW</button>
+                              <button class="btn waves-effect waves-light center" type="submit" id="register">REGISTER NOW</button>
                           </div>
                       </div>
-                  </form>
+                  </div>
               </div>
           </div>
           <div class="col s3"></div>
@@ -72,5 +72,6 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="static/js/materialize.min.js"></script>
   <script type="text/javascript" src="static/js/navbar-collapse.js"></script>
+  <script type="text/javascript" src="static/js/register.js"></script>
 </body>
 </html>
