@@ -106,3 +106,4 @@ ENV/
 # share-script
 settings.cfg
 database.conf
+app.conf
