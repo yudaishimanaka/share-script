@@ -8,6 +8,7 @@
   <link type="text/css" rel="stylesheet" href="static/css/materialize.min.css"  media="screen,projection"/>
   <link type="text/css" rel="stylesheet" href="static/css/font.css">
   <link type="text/css" rel="stylesheet" href="static/css/register.css">
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
@@ -60,7 +61,22 @@
                       </div>
                       <div class="row">
                           <div class="input-field col m12 s12">
-                              <button class="btn waves-effect waves-light center" type="submit" id="register">REGISTER NOW</button>
+                              <button data-target="register-check-modal" class="btn waves-effect waves-light center modal-trigger">REGISTER NOW</button>
+                          </div>
+                      </div>
+                      <div id="register-check-modal" class="modal">
+                          <div class="modal-content">
+                              <h3 class="center">
+                                  <i class="em em-warning"></i>
+                                  CAUTION!!!
+                                  <i class="em em-warning"></i>
+                              </h3>
+                              <h5 class="center">
+                                  If there is no mistake in the user name, mail address, password, please press OK to complete registration.
+                              </h5>
+                          </div>
+                          <div class="modal-footer">
+                              <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat" id="register">OK</a>
                           </div>
                       </div>
                   </div>

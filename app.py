@@ -47,5 +47,13 @@ def create_user():
         return status
 
 
+@app.route('/auth', methods=['POST'])
+def auth():
+    if request.method == "POST":
+        email = request.json['email']
+        password = request.json['password']
+        return "OK"
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
