@@ -63,7 +63,7 @@ def auth():
 
             if user is not None and pbkdf2_sha256.verify(password, user.password) is True:
                 session['user_id'] = user.user_id
-                status = [1, "auth success"]
+                status = [1, url_for('views.index')]
             else:
                 status = [0, "auth failed"]
 
