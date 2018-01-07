@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.register_blueprint(views.views)
 config = configparser.ConfigParser()
 config.read('app.conf')
-app.secret_key = config['SECRET']['SECRET_KEY']
+app.config['SECRET_KEY'] = config['SECRET']['SECRET_KEY']
 
 
 @app.route('/create_user', methods=['POST'])
@@ -71,6 +71,12 @@ def auth():
             status = [2, "don't completed input"]
 
         return jsonify(status)
+
+
+@app.route('/logout', methods=['GET'])
+def logout():
+    session.pop('user_id', None)
+    return redirect('login')
 
 
 if __name__ == '__main__':
