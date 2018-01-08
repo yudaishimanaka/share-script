@@ -15,22 +15,35 @@
 
 <body>
   <!--Import jQuery before materialize.js-->
-  <nav class="cyan darken-2 z-depth-4">
-      <div class="nav-wrapper">
-          <a href="#!" class="brand-logo center">~$hare$cript</a>
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
-              <li><a href="/index" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Home"><i class="material-icons">home</i></a></li>
-              <li><a href="/register" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Register"><i class="material-icons">person_add</i></a></li>
-              <li><a href="/login" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Login"><i class="material-icons">person</i></a></li>
-          </ul>
-          <ul class="side-nav" id="mobile-demo">
-              <li><a href="/index"><i class="material-icons">home</i>Home</a></li>
-              <li><a href="/register"><i class="material-icons">person_add</i>Register</a></li>
-              <li><a href="/login"><i class="material-icons">person</i>Login</a></li>
-          </ul>
-      </div>
-  </nav>
+  <div class="navbar-fixed">
+      <nav class="cyan darken-2 z-depth-4">
+          <div class="nav-wrapper">
+              <a href="#!" class="brand-logo center">~$hare$cript</a>
+              <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+              {% if session.user_id %}
+              <ul class="right hide-on-med-and-down">
+                  <li><a href="/index" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Home"><i class="material-icons">home</i></a></li>
+                  <li><a href="/logout" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Logout"><i class="material-icons">forward</i></a></li>
+              </ul>
+              <ul class="side-nav" id="mobile-demo">
+                  <li><a href="/index"><i class="material-icons">home</i>Home</a></li>
+                  <li><a href="/logout"><i class="material-icons">forward</i>Logout</a></li>
+              </ul>
+              {% else %}
+              <ul class="right hide-on-med-and-down">
+                  <li><a href="/index" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Home"><i class="material-icons">home</i></a></li>
+                  <li><a href="/register" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Register"><i class="material-icons">person_add</i></a></li>
+                  <li><a href="/login" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Login"><i class="material-icons">person</i></a></li>
+              </ul>
+              <ul class="side-nav" id="mobile-demo">
+                  <li><a href="/index"><i class="material-icons">home</i>Home</a></li>
+                  <li><a href="/register"><i class="material-icons">person_add</i>Register</a></li>
+                  <li><a href="/login"><i class="material-icons">person</i>Login</a></li>
+              </ul>
+              {% endif %}
+          </div>
+      </nav>
+  </div>
   <div class="container">
       <div class="row">
           <div class="col s3"></div>
