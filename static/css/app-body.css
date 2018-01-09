@@ -11,7 +11,6 @@ div[class="row"] {
 .btn {
     width: 100%;
 }
-
 .nav-fixed {
     position: fixed;
     right: 0;
@@ -23,4 +22,7 @@ div[class="row"] {
 td {
     padding-top: 5px;
     padding-bottom: 5px;
+}
+.section {
+    padding-top: 0;
 }
