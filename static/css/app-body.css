@@ -20,3 +20,7 @@ div[class="row"] {
     margin-bottom: 0px;
     z-index: 997;
 }
+td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

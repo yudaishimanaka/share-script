@@ -7,7 +7,7 @@
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="static/css/materialize.min.css"  media="screen,projection"/>
   <link type="text/css" rel="stylesheet" href="static/css/font.css">
-  <link type="text/css" rel="stylesheet" href="static/css/register.css">
+  <link type="text/css" rel="stylesheet" href="static/css/app-body.css">
   <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -46,72 +46,75 @@
   </ul>
   {% endif %}
   <div class="container">
-      <ul class="collection">
-          <li class="collection-item avatar">
-              <img src="static/images/logo.png" alt class="circle">
-              <span class="title">NTP Sync Script</span>
-              <p>This command is Sync your NTP server for one liner!!!</p>
-              <div class="chip">
-                  NTP
-              </div>
-          </li>
-          <li class="collection-item avatar">
-              <img src="static/images/logo.png" alt class="circle">
-              <span class="title">NTP Sync Script</span>
-              <p>This command is Sync your NTP server for one liner!!!</p>
-              <div class="chip">
-                  NTP
-              </div>
-          </li>
-          <li class="collection-item avatar">
-              <img src="static/images/logo.png" alt class="circle">
-              <span class="title">NTP Sync Script</span>
-              <p>This command is Sync your NTP server for one liner!!!</p>
-              <div class="chip">
-                  NTP
-              </div>
-          </li>
-          <li class="collection-item avatar">
-              <img src="static/images/logo.png" alt class="circle">
-              <span class="title">NTP Sync Script</span>
-              <p>This command is Sync your NTP server for one liner!!!</p>
-              <div class="chip">
-                  NTP
-              </div>
-          </li>
-          <li class="collection-item avatar">
-              <img src="static/images/logo.png" alt class="circle">
-              <span class="title">NTP Sync Script</span>
-              <p>This command is Sync your NTP server for one liner!!!</p>
-              <div class="chip">
-                  NTP
-              </div>
-          </li>
-          <li class="collection-item avatar">
-              <img src="static/images/logo.png" alt class="circle">
-              <span class="title">NTP Sync Script</span>
-              <p>This command is Sync your NTP server for one liner!!!</p>
-              <div class="chip">
-                  NTP
-              </div>
-          </li>
-          <li class="collection-item avatar">
-              <img src="static/images/logo.png" alt class="circle">
-              <span class="title">NTP Sync Script</span>
-              <p>This command is Sync your NTP server for one liner!!!</p>
-              <div class="chip">
-                  NTP
-              </div>
-          </li>
-          <li class="collection-item avatar">
-              <img src="static/images/logo.png" alt class="circle">
-              <span class="title">NTP Sync Script</span>
-              <p>This command is Sync your NTP server for one liner!!!</p>
-              <div class="chip">
-                  NTP
-              </div>
-          </li>
-      </ul>
+      <div class="row">
+          <div class="col s9 m8">
+              <ul class="collection">
+                  <li class="collection-item avatar">
+                      <img src="static/images/user.png" alt class="circle">
+                      <span class="title">NTP Sync Script</span>
+                      <p>This command is Sync your NTP server for one liner!!!</p>
+                      <div class="chip">NTP</div>
+                      <a href="#" class="secondary-content"><i class="material-icons">more_horiz</i></a>
+                  </li>
+                  <li class="collection-item avatar">
+                      <img src="static/images/user.png" alt class="circle">
+                      <span class="title">Install Python3 for terminal</span>
+                      <p>This command is Install for Python3 use your terminal</p>
+                      <div class="chip">Python3</div>
+                      <div class="chip">Ubuntu</div>
+                      <div class="chip">Bash</div>
+                      <a href="#" class="secondary-content"><i class="material-icons">more_horiz</i></a>
+                  </li>
+                  <li class="collection-item avatar">
+                      <img src="static/images/user.png" alt class="circle">
+                      <span class="title">Install pyenv Ubuntu</span>
+                      <p>This command is Install for pyenv use your machine Ubuntu only</p>
+                      <div class="chip">pyenv</div>
+                      <div class="chip">Python3</div>
+                      <div class="chip">Ubuntu</div>
+                      <a href="#" class="secondary-content"><i class="material-icons">more_horiz</i></a>
+                  </li>
+              </ul>
+          </div>
+          <div class="col s3 m4">
+              {% if session.user_id %}
+              Login success
+              {% endif %}
+              <table>
+                  <thead>
+                    <tr>
+                        <th>タグ一覧</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <td>Python3</td>
+                    </tr>
+                    <tr>
+                        <td>NTP</td>
+                    </tr>
+                    <tr>
+                        <td>Bash</td>
+                    </tr>
+                    <tr>
+                        <td>Ubuntu</td>
+                    </tr>
+                    <tr>
+                        <td>Python3</td>
+                    </tr>
+                    <tr>
+                        <td>NTP</td>
+                    </tr>
+                    <tr>
+                        <td>Bash</td>
+                    </tr>
+                    <tr>
+                        <td>Ubuntu</td>
+                    </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
   </div>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="static/js/materialize.min.js"></script>
