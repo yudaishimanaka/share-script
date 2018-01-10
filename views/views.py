@@ -1,4 +1,6 @@
 from flask import *
+from database import Session as Ss
+from models import User
 
 
 views = Blueprint('views', __name__)
@@ -14,4 +16,12 @@ def login():
 
 @views.route('/index', methods=['GET'])
 def index():
-    return render_template('index.html')
+    if session:
+        user = Ss.query(User).filter_by(user_id=session['user_id']).one()
+        return render_template('index.html', user=user)
+    else:
+        return render_template('index.html')
+
+@views.route('/setting', methods=['GET'])
+def setting():
+    return render_template('setting.html')

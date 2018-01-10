@@ -89,6 +89,9 @@
                     <i class="material-icons">close</i>
                 </div>
               </form>
+              {% if session and user %}
+              <h5>logged in with {{ user.user_name }}</h5>
+              {% endif %}
               <h5>タグ一覧</h5>
               <ul class="section table-of-contents">
                   <li><a href="#python3">Python3</a></li>
