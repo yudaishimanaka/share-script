@@ -22,6 +22,7 @@
           {% if session.user_id %}
           <ul class="right hide-on-med-and-down">
               <li><a href="/index" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="ホーム"><i class="material-icons">home</i></a></li>
+              <li><a href="/setting" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="設定"><i class="material-icons">settings</i></a></li>
               <li><a href="/logout" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="ログアウト"><i class="material-icons">forward</i></a></li>
           </ul>
           {% else %}
@@ -36,6 +37,7 @@
   {% if session.user_id %}
   <ul class="side-nav" id="mobile-demo">
       <li><a href="/index"><i class="material-icons">home</i>ホーム</a></li>
+      <li><a href="/setting"><i class="material-icons">settings</i>設定</a></li>
       <li><a href="/logout"><i class="material-icons">forward</i>ログアウト</a></li>
   </ul>
   {% else %}
