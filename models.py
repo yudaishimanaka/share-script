@@ -16,6 +16,7 @@ class User(Base):
     user_name = Column(String(255), nullable=False)
     email = Column(String(255), nullable=False)
     password = Column(String(255), nullable=False)
+    client_image_path = Column(String(255), nullable=True)
 
     script = relation('Script', order_by='Script.script_id',
                       uselist=True, backref='user')
